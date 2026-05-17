@@ -3,3 +3,6 @@
 
 # pyc
 *.pyc
+
+# secrets
+local_config.py

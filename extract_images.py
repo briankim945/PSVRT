@@ -2,14 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
+from local_config import save_dir
+
 fig, axes = plt.subplots(3, 6, figsize=(18, 9))
 
 for row, n_size in enumerate([40, 60, 120]):
-    # out_dir = f'/users/bkim53/scratch/psvrt_sd_m{m_size}_n{n_size}'
-    scratch_dir = f'/users/bkim53/scratch/psvrt'
-
-    images = np.load(f'{scratch_dir}/psvrt_sd_m4_n{n_size}/train_images.npy')
-    labels = np.load(f'{scratch_dir}/psvrt_sd_m4_n{n_size}/train_labels.npy')
+    images = np.load(f'{save_dir}/psvrt_sd_m4_n{n_size}/train_images.npy')
+    labels = np.load(f'{save_dir}/psvrt_sd_m4_n{n_size}/train_labels.npy')
 
     print(images.shape, labels.shape)
     

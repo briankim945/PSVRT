@@ -2,6 +2,8 @@ from instances.psvrt_new import n_sd_k
 import numpy as np
 import os
 
+from local_config import save_dir
+
 def generate_psvrt_split(n_size, m_size=4, num_train=8000, 
                          num_val=1000, num_test=1000):
     total = num_train + num_val + num_test
@@ -38,7 +40,7 @@ def generate_psvrt_split(n_size, m_size=4, num_train=8000,
         'test': (images[num_train+num_val:], labels[num_train+num_val:]),
     }
     
-    out_dir = f'/users/bkim53/scratch/psvrt_sd_m{m_size}_n{n_size}'
+    out_dir = f'{save_dir}/psvrt_sd_m{m_size}_n{n_size}'
     os.makedirs(out_dir, exist_ok=True)
     
     for split_name, (imgs, lbls) in splits.items():
